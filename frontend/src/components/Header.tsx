@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { GraduationCap } from 'lucide-react'
 import { Button } from './Button';
 
 /**
@@ -41,12 +42,13 @@ export const Header: React.FC<HeaderProps> = ({ selectedClass, onSelectClass }) 
                 <button
                   key={classLevel}
                   onClick={() => onSelectClass(classLevel)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 text-sm ${
+                  className={`flex gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 text-sm ${
                     selectedClass === classLevel
                       ? 'bg-blue-600 text-white shadow-md'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
+                  <GraduationCap/>
                   Class {classLevel}
                 </button>
               ))}

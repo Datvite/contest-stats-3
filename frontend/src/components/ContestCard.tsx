@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from './Button';
+import { BookOpenCheck, BookCheck } from 'lucide-react';
 
 /**
  * ContestCard component - displays individual contest information
@@ -42,16 +43,18 @@ export const ContestCard: React.FC<ContestCardProps> = ({
           variant="default"
           size="sm"
           onClick={() => window.open(contestUrl, '_blank')}
-          className="flex-1"
+          className="flex-1 gap-1"
         >
+          <BookCheck/>
           Contest
         </Button>
         <Button
           variant="outline"
           size="sm"
           onClick={() => window.open(solutionUrl, '_blank')}
-          className="flex-1"
+          className="flex-1 gap-2"
         >
+          <BookOpenCheck/>
           Solution
         </Button>
       </div>
