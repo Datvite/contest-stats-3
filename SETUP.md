@@ -73,7 +73,7 @@ source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
-
+pip install --upgrade sqlalchemy sqlmodel
 # Initialize database with sample data
 python init_db.py
 
