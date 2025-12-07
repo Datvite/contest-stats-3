@@ -10,7 +10,7 @@ class ContestBase(SQLModel):
     """Base contest model with common fields"""
     class_level: int = Field(ge=9, le=12, description="Class level (9-12)")
     year: int = Field(ge=2000, le=2100, description="Contest year")
-    pre_number: int = Field(ge=1, le=3, description="Pre number (1-5)")
+    pre_number: int = Field(ge=1, le=5, description="Pre number (1-5)")
     contest_url: str = Field(description="URL to the contest")
     solution_url: str = Field(description="URL to the solutions")
 
