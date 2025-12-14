@@ -10,8 +10,8 @@ import logo from '../assets/logo.png';
  * Sticky positioning with smooth animations
  */
 interface HeaderProps {
-  selectedClass: number | null;
-  onSelectClass: (classLevel: number) => void;
+  selectedClass: number | "other" | null;
+  onSelectClass: (classLevel: number | "other") => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({ selectedClass, onSelectClass }) => {
@@ -51,6 +51,17 @@ export const Header: React.FC<HeaderProps> = ({ selectedClass, onSelectClass }) 
               Class {classLevel}
             </button>
           ))}
+          <button
+            onClick={() => onSelectClass("other")}
+            className={`flex items-center gap-2 px-5 py-3 rounded-xl font-medium transition-all duration-200 text-base ${
+              selectedClass === "other"
+                ? 'bg-blue-600 text-white shadow-lg scale-105'
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-105'
+            }`}
+          >
+            <GraduationCap className="w-5 h-5"/>
+            Other
+          </button>
         </div>
       </div>
 
