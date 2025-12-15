@@ -10,8 +10,8 @@ const getBaseURL = (): string => {
   if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
     return 'http://localhost:8000';
   }
-  // Otherwise use the remote server
-  return 'http://98.70.34.119:8000';
+  // Otherwise use the remote server with HTTPS
+  return 'https://98.70.34.119:8000';
 };
 
 const api: AxiosInstance = axios.create({
